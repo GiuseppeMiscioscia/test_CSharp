@@ -56,7 +56,7 @@ namespace test_CSharp
             Account r = Accounts[pos];
             Accounts[pos] = null;
             NumberOfAccounts--;
-            for (int i = pos; i < Accounts.Length-1; i++)
+            for (int i = pos; i < Accounts.Length - 1; i++)
             {
                 if (Accounts[i + 1] != null)
                 {
@@ -67,7 +67,7 @@ namespace test_CSharp
                     Accounts[i] = null;
                 }
             }
-            if(NumberOfAccounts == 4)
+            if (NumberOfAccounts == 4)
             {
                 Accounts[NumberOfAccounts] = null;
             }
@@ -75,15 +75,19 @@ namespace test_CSharp
         }
         public Account RemoveAccount(int pos)
         {
-            Account r = Accounts[pos];
-            if (pos == Accounts.Length - 1)
+            if (pos < 0 || pos > Accounts.Length - 1 || NumberOfAccounts <= 0)
             {
-                Accounts[pos] = null;
-                NumberOfAccounts--;
-                return r;
+                return null;
             }
-            for (int i = pos; i < NumberOfAccounts-1; i++)
-            {                
+            Account r = Accounts[pos];
+            //if (pos == Accounts.Length - 1)
+            //{
+            //    Accounts[pos] = null;
+            //    NumberOfAccounts--;
+            //    return r;
+            //}
+            for (int i = pos; i < NumberOfAccounts - 1; i++)
+            {
                 Accounts[i] = Accounts[i + 1];
             }
             NumberOfAccounts--;
@@ -104,6 +108,17 @@ namespace test_CSharp
                 }
             }
         }
-
+        public decimal TotalBalance()
+        {
+            var total = 0.0m;
+            foreach (var acc in Accounts)
+            {
+                if (acc != null)
+                {
+                    total += acc.Saldo;
+                }
+            }
+            return total;
+        }
     }
 }

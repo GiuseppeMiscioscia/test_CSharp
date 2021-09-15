@@ -8,14 +8,57 @@ namespace test_CSharp
 {
     public class BankManager
     {
-        public static void HandleBank()
+        public decimal InitialBalance { get; set; }
+        public static decimal MaxBalance { get; set; }
+        public static int NumManager { get; set; }
+        private Client[] clients;
+        public int NumClients { get; set; }
+        public BankManager(decimal initialBalance)
         {
-            Account a1 = new Account(100);
-            Account a2 = new Account(200);
-            Account a3 = new Account(300);
-            Account a4 = new Account(400);
-            Account a5 = new Account(500);
-            Account a6 = new Account(600);
+            InitialBalance = initialBalance;
+            BankManager.NumManager++;
+            clients = new Client[3];
+        }
+        public bool AddClient(Client c)
+        {
+            if (NumClients >= clients.Length)
+            {
+                return false;
+            }
+            clients[NumClients] = c;
+            NumClients++;
+            return true;
+        }
+        public void report()
+        {
+            for (int i = 0; i < clients.Length; i++)
+                if (clients[i] != null)
+                {
+                    Console.Write("nome: " + clients[i].Name);
+                    Console.Write(" Cognome: " + clients[i].Lastname);
+                    Console.Write(" totale account: " + clients[i].TotalBalance());
+                    Console.WriteLine();
+
+                }
+            
+            {
+
+            }
+        }
+        public static void F()
+        {
+            //Console.WriteLine(InitialBalance);
+        }
+        public void HandleBank()
+        {
+            double x = Math.Sin(100);
+            double p = Math.PI;
+            Account a1 = new Account(this.InitialBalance);
+            Account a2 = new Account(InitialBalance);
+            Account a3 = new Account(InitialBalance);
+            Account a4 = new Account(InitialBalance);
+            Account a5 = new Account(InitialBalance);
+            Account a6 = new Account(InitialBalance);
             Client c1 = new Client("Mario", "Rossi", "abcd123", new DateTime(1990, 1, 1));
             Client c2 = new Client("Gino", "Carlo", "dcfd123", new DateTime(1980, 2, 1));
 
@@ -27,9 +70,10 @@ namespace test_CSharp
 
             c1.PrintReport();
             Console.WriteLine("***");
-            c1.RemoveAccount(4);
+            c1.RemoveAccount(3);
             c1.PrintReport();
             Console.ReadKey();
         }
+
     }
 }

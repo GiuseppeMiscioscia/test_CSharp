@@ -34,7 +34,32 @@ namespace test_CSharp
         }
         static void Main(string[] args)
         {
-            BankManager.HandleBank();
+            BankManager bm1 = new BankManager(10000);
+
+            Account a1 = new Account(bm1.InitialBalance);
+            Account a2 = new Account(bm1.InitialBalance);
+            Account a3 = new Account(bm1.InitialBalance);
+            Account a4 = new Account(bm1.InitialBalance);
+            Account a5 = new Account(bm1.InitialBalance);
+            Account a6 = new Account(bm1.InitialBalance);
+            Client c1 = new Client("Mario", "Rossi", "abcd123", new DateTime(1990, 1, 1));
+            Client c2 = new Client("Gino", "Carlo", "dcfd123", new DateTime(1980, 2, 1));
+
+            c1.AddAccount(a1);
+            c1.AddAccount(a2);
+            c1.AddAccount(a3);
+            c1.AddAccount(a4);
+            c1.AddAccount(a5);
+            c2.AddAccount(a6);
+
+            bm1.AddClient(c1);
+            bm1.AddClient(c2);
+            bm1.report();
+
+            Console.ReadKey();
+
+
+
             //int x = 3;
             //// l'oggetto viene creato nella memoria heap(mucchio)
             //// mentre y (il puntatore) e' salvato all'interno di main come stack
