@@ -1,0 +1,14 @@
+D:\.GIT\Test_linguaggi\test_CSharp\test_CSharp\test_CSharp\bin\Debug\test_CSharp.exe.config
+D:\.GIT\Test_linguaggi\test_CSharp\test_CSharp\test_CSharp\bin\Debug\test_CSharp.exe
+D:\.GIT\Test_linguaggi\test_CSharp\test_CSharp\test_CSharp\bin\Debug\test_CSharp.pdb
+D:\.GIT\Test_linguaggi\test_CSharp\test_CSharp\test_CSharp\obj\Debug\test_CSharp.csproj.AssemblyReference.cache
+D:\.GIT\Test_linguaggi\test_CSharp\test_CSharp\test_CSharp\obj\Debug\test_CSharp.csproj.CoreCompileInputs.cache
+D:\.GIT\Test_linguaggi\test_CSharp\test_CSharp\test_CSharp\obj\Debug\test_CSharp.exe
+D:\.GIT\Test_linguaggi\test_CSharp\test_CSharp\test_CSharp\obj\Debug\test_CSharp.pdb
+D:\.GIT\Test_linguaggi\test_CSharp\test_CSharp\obj\Debug\test_CSharp.csproj.AssemblyReference.cache
+D:\.GIT\Test_linguaggi\test_CSharp\test_CSharp\obj\Debug\test_CSharp.csproj.CoreCompileInputs.cache
+D:\.GIT\Test_linguaggi\test_CSharp\test_CSharp\obj\Debug\test_CSharp.exe
+D:\.GIT\Test_linguaggi\test_CSharp\test_CSharp\obj\Debug\test_CSharp.pdb
+D:\.GIT\Test_linguaggi\test_CSharp\test_CSharp\bin\Debug\test_CSharp.exe.config
+D:\.GIT\Test_linguaggi\test_CSharp\test_CSharp\bin\Debug\test_CSharp.exe
+D:\.GIT\Test_linguaggi\test_CSharp\test_CSharp\bin\Debug\test_CSharp.pdb
