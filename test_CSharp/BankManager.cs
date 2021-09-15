@@ -75,5 +75,13 @@ namespace test_CSharp
             Console.ReadKey();
         }
 
+        public void CheckAccount(Account a) 
+        {
+            if (a.Saldo > 1000000) 
+            {
+                a.Deposit(100);
+            }
+        }
+
     }
 }

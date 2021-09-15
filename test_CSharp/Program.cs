@@ -35,28 +35,58 @@ namespace test_CSharp
         static void Main(string[] args)
         {
             BankManager bm1 = new BankManager(10000);
+            PremiumCaimanAccount pm1 = new PremiumCaimanAccount();
 
-            Account a1 = new Account(bm1.InitialBalance);
-            Account a2 = new Account(bm1.InitialBalance);
-            Account a3 = new Account(bm1.InitialBalance);
-            Account a4 = new Account(bm1.InitialBalance);
-            Account a5 = new Account(bm1.InitialBalance);
-            Account a6 = new Account(bm1.InitialBalance);
-            Client c1 = new Client("Mario", "Rossi", "abcd123", new DateTime(1990, 1, 1));
-            Client c2 = new Client("Gino", "Carlo", "dcfd123", new DateTime(1980, 2, 1));
+            Account a1 = new Account(1000);
+            Console.WriteLine(a1.Saldo);
+            a1.Deposit(1000);
+            Console.WriteLine(a1.Saldo);
+            Console.WriteLine("************************************************************************");
 
-            c1.AddAccount(a1);
-            c1.AddAccount(a2);
-            c1.AddAccount(a3);
-            c1.AddAccount(a4);
-            c1.AddAccount(a5);
-            c2.AddAccount(a6);
+            CaimanAccount cm1 = new CaimanAccount(1000, "abc", 10);
+            Console.WriteLine(cm1.Saldo);
+            cm1.Deposit(1000);
+            Console.WriteLine(cm1.Saldo);
+            Console.WriteLine("************************************************************************");
 
-            bm1.AddClient(c1);
-            bm1.AddClient(c2);
-            bm1.report();
+            Account x1 = (Account)new CaimanAccount(10000, "zzz", 10);
 
-            Console.ReadKey();
+            x1.Deposit(100);
+
+
+            bm1.CheckAccount(a1);//tipo Account
+            bm1.CheckAccount(cm1);//tipo CaimanAccount
+            bm1.CheckAccount(pm1);//tipo PremiumCaimanAccount
+
+
+
+            //string x2 = new CaimanAccount(10, "non", 1);
+            //x2.Length;
+
+
+
+
+            //Account a1 = new Account(bm1.InitialBalance);
+            //Account a2 = new Account(bm1.InitialBalance);
+            //Account a3 = new Account(bm1.InitialBalance);
+            //Account a4 = new Account(bm1.InitialBalance);
+            //Account a5 = new Account(bm1.InitialBalance);
+            //Account a6 = new Account(bm1.InitialBalance);
+            //Client c1 = new Client("Mario", "Rossi", "abcd123", new DateTime(1990, 1, 1));
+            //Client c2 = new Client("Gino", "Carlo", "dcfd123", new DateTime(1980, 2, 1));
+
+            //c1.AddAccount(a1);
+            //c1.AddAccount(a2);
+            //c1.AddAccount(a3);
+            //c1.AddAccount(a4);
+            //c1.AddAccount(a5);
+            //c2.AddAccount(a6);
+
+            //bm1.AddClient(c1);
+            //bm1.AddClient(c2);
+            //bm1.report();
+
+            //Console.ReadKey();
 
 
 
@@ -99,7 +129,7 @@ namespace test_CSharp
             //Console.WriteLine(sum);
             //#endregion
 
-            //Console.ReadKey();
+            Console.ReadKey();
         }
         static bool Swap(ref int a, ref int b, out int sum)
         {

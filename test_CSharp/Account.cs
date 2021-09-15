@@ -8,11 +8,39 @@ namespace test_CSharp
 {
     public class Account
     {
-        private decimal saldo;
+        protected decimal saldo;
         public Account(decimal saldo)
         {
             Saldo = saldo;
         }
+
+        //public Account() 
+        //{ 
+        
+        //}
+
+        public decimal Deposit(decimal inputValue) 
+        {
+            saldo += inputValue;
+            
+            return saldo;
+        }
+
+        public decimal Withdraw(decimal inputValue) 
+        {
+            saldo -= inputValue;
+
+            return saldo;
+        }
+
+        public decimal Tansfer(decimal inputValue, Account target)
+        {
+            this.Withdraw(inputValue);
+            target.Deposit(inputValue);
+
+            return saldo;
+        }
+
         #region metodo 1
         //public decimal Saldo { get; set; }// automatic property
         #endregion
